@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/atest361/multicassa/
+    - /bin/cp -R multikassa $DEPLOYPATH
