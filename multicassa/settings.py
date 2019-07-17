@@ -110,4 +110,4 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join('/home/atest361/public_html/multicassa/public/', 'public')
+STATIC_ROOT = os.path.join('/home/atest361/public_html/multicassa/', 'public')
