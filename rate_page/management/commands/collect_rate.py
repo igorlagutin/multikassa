@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import urllib.request, json 
+import requests, json 
 
 from rate_page.models import CryptoRate
 from django.core.management.base import BaseCommand
@@ -17,10 +17,10 @@ class Command(BaseCommand):
 
           rates = CryptoRate.objects.all()
           for rate in rates:
-               api_url = "https://api.binance.com/api/v3/ticker/price?symbol=" + rate.code
-               with urllib.request.urlopen(api_url) as url:
-                    data = json.loads(url.read().decode())
-                    rate.sell = float(data['price'])
-                    rate.save()
+                api_url = "https://api.binance.com/api/v3/ticker/price?symbol=" + rate.code
+                resp = requests.get(api_url)
+                data = json.loads(resp.content.decode())
+                rate.sell = float(data['price'])
+                rate.save()
 
                
