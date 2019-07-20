@@ -1,2 +1,5 @@
 multicassa/local_settings.py
 __pycache__/
+migrations/
+static/admin/
+db.sqlite3

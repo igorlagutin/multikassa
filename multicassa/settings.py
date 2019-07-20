@@ -1,3 +1,4 @@
+from .local_settings import *
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -14,7 +15,6 @@ SECRET_KEY = '5smzb5unw(a4)75nejafo9vcnfwh#2cx220zm^+saoj3sh3_%9'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['test.ttn.od.ua']
 
 # Application definition
 
@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rate_page.apps.RatePageConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -110,4 +112,4 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join('/home/atest361/public_html/multicassa/', 'public')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
