@@ -21,4 +21,4 @@ class PassengerPathInfoFix(object):
         return self.app(environ, start_response)
 application = get_wsgi_application()
 application = PassengerPathInfoFix(application)
-application = WhiteNoise(application, root='/home/atest361/public_html/multicassa/static')
+application = WhiteNoise(application, root='/home/multikas/multikassa/static')
