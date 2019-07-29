@@ -10717,6 +10717,12 @@ h2 {
   margin-bottom: 2rem;
 }
 
+.delta {
+  display: block;
+  color: #999;
+  font-size: 0.6em;
+}
+
 #portfolio h3 {
   font-size: 1.2rem;
 }

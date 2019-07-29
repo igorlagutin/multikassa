@@ -6,8 +6,8 @@ from .models import *
 class RateAdmin(admin.ModelAdmin):
 	# fields = ('name', 'filters', 'category')
 
-    list_display = ('name','pursage','sell',)
-    list_editable = ('pursage','sell',)
+    list_display = ('name','pursage','pursage_delta','sell','sell_delta' )
+    list_editable = ('pursage', 'pursage_delta' ,'sell', 'sell_delta')
     ordering = ['id']
 
 class CryptoRateAdmin(admin.ModelAdmin):
@@ -18,6 +18,8 @@ class CryptoRateAdmin(admin.ModelAdmin):
 
 admin.site.register(Rate, RateAdmin)
 admin.site.register(CryptoRate, CryptoRateAdmin)
+admin.site.register(AboutUsSection)
+admin.site.register(ProcessSection)
 
 AdminSite.site_header = "MULTIKASSA"
 
