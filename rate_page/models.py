@@ -63,8 +63,8 @@ class ProcessSection(models.Model):
         return str(self.title)
 
 class TelegramMessage(models.Model):
-    message_title = models.CharField(max_length=2048, verbose_name="Заголовок сообщения, никак не влияет на то что будет отправлено, НЕ РЕДАКТИРОВАТЬ")
-    message_text = models.TextField(verbose_name="Текст сообщения")
+    message_title = models.CharField(max_length=2048, verbose_name="Заголовок сообщения, никак не влияет на то что будет отправлено, НЕ РЕДАКТИРОВАТЬ", default=' ')
+    message_text = models.TextField(verbose_name="Текст сообщения", default=' ')
     
     class Meta():
         verbose_name = "Сообщение в телеграм"
