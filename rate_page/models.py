@@ -71,7 +71,7 @@ class TelegramMessage(models.Model):
         verbose_name_plural = "Сообщение в телеграм"
     
     def __str__(self):
-        return str("Текст сообщения в телеграмм")
+        return str(self.message_title)
 
 class TelegramButtons(models.Model):
     button_text = models.CharField(max_length=2048, verbose_name="Текст кнопки") 
