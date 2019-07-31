@@ -34,6 +34,7 @@ class Command(BaseCommand):
         # date = datetime.today().strftime("%d/%m/%Y")
 
         telegram_message = TelegramMessage.objects.all()[0].message_text
+        after_telegram_message = TelegramMessage.objects.all()[1].message_text
 
         message = telegram_message 
 
@@ -51,6 +52,8 @@ class Command(BaseCommand):
         for rate in crypto_rates:
             add_message = "*%s* - %s\n\r" % (rate.name, rate.sell)
             message += add_message
+
+        message = message + '\n\r' + after_telegram_message
 
 
         send_to_telegram(settings.CHAT_ID, message)
