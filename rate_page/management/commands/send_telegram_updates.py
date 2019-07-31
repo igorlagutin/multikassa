@@ -43,7 +43,7 @@ class Command(BaseCommand):
         rates = Rate.objects.all()
 
         for rate in rates:
-            add_message = "*%s* - купля %d / продажа %d\n\r" % (rate.name, rate.pursage, rate.sell)
+            add_message = "*%s* - купля %s / продажа %s\n\r" % (rate.name, rate.pursage, rate.sell)
             message += add_message
 
         message += "\n\rКурс криптовалют:\n\r"
