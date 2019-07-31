@@ -61,3 +61,25 @@ class ProcessSection(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+class TelegramMessage(models.Model):
+    message_text = models.TextField(verbose_name="Текст сообщения")
+    
+    class Meta():
+        verbose_name = "Сообщение в телеграм"
+        verbose_name_plural = "Сообщение в телеграм"
+    
+    def __str__(self):
+        return str("Текст сообщения в телеграмм")
+
+class TelegramButtons(models.Model):
+    button_text = models.CharField(max_length=2048, verbose_name="Текст кнопки") 
+    button_url = models.URLField(max_length=2048, verbose_name="URL кнопки", help_text="тут должен быть валидный URL") 
+
+    class Meta():
+        verbose_name = "Кнопка"
+        verbose_name_plural = "кнопки"
+        ordering = ['id']
+
+    def __str__(self):
+        return str(self.button_text)

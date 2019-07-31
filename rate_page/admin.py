@@ -20,6 +20,8 @@ admin.site.register(Rate, RateAdmin)
 admin.site.register(CryptoRate, CryptoRateAdmin)
 admin.site.register(AboutUsSection)
 admin.site.register(ProcessSection)
+admin.site.register(TelegramMessage)
+admin.site.register(TelegramButtons)
 
 AdminSite.site_header = "MULTIKASSA"
 
