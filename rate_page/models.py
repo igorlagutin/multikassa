@@ -84,3 +84,14 @@ class TelegramButtons(models.Model):
 
     def __str__(self):
         return str(self.button_text)
+
+class Contacts(models.Model):
+    phone = models.CharField(max_length=2048, verbose_name="Номер телефона",  default=' ')
+
+    
+    class Meta():
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакты"
+    
+    def __str__(self):
+        return str(self.phone)

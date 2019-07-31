@@ -212,13 +212,18 @@
       <div class="row">
         <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
           <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+38(095)227-12-12 </div>
-          <div>+38(093)476-98-25</div>
+          {% for contact in contacts %}
+            <div>{{contact.phone}}</div>
+          {% endfor %}
         </div>
         <div class="col-lg-4 mr-auto text-center">
           <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
           <a class="d-block" href="mailto:support@multikassa.net">support@multikassa.net</a>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fab fa-telegram-plane fa-3x mb-3 text-muted"></i>
+            <div>Подписывайтесь на наш канал в Telegram:</div>
+          <a class="d-block" href="https://t.me/Multikassa_net">Multikassa_net</a>
         </div>
       </div>
     </div>

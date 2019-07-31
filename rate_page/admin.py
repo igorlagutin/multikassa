@@ -22,6 +22,7 @@ admin.site.register(AboutUsSection)
 admin.site.register(ProcessSection)
 admin.site.register(TelegramMessage)
 admin.site.register(TelegramButtons)
+admin.site.register(Contacts)
 
 AdminSite.site_header = "MULTIKASSA"
 

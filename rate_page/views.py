@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Rate, CryptoRate, AboutUsSection, ProcessSection
+from .models import Rate, CryptoRate, AboutUsSection, ProcessSection, Contacts
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
@@ -12,13 +12,16 @@ def index(request):
 
     process = ProcessSection.objects.all()
 
+    contacts = Contacts.objects.all()
+
 
 
     context = {
         "rate":rate,
         "crypto_rate":crypto_rate,
         "about":about_us,
-        "process": process
+        "process": process,
+        "contacts": contacts
         
         }
 
