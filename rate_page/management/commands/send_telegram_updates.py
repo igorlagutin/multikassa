@@ -38,16 +38,16 @@ class Command(BaseCommand):
 
         message = telegram_message 
 
-        message += '\n\r\n\r'
+        message += '\n\r\n\r🏦 Покупаем / Продаем\n\r\n\r'
 
         crypto_rates = CryptoRate.objects.all()
         rates = Rate.objects.all()
 
         for rate in rates:
-            add_message = "*%s* - купля %s / продажа %s\n\r" % (rate.name, rate.pursage, rate.sell)
+            add_message = "%s*%s* %s / %s\n\r" % (rate.emodji, rate.name, rate.pursage, rate.sell)
             message += add_message
 
-        message += "\n\rКурс криптовалют:\n\r"
+        message += "\n\r⛏Курс криптовалют:\n\r\n\r"
 
         for rate in crypto_rates:
             add_message = "*%s* - %s\n\r" % (rate.name, rate.sell)

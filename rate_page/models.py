@@ -8,6 +8,7 @@ class Rate(models.Model):
     pursage_delta = models.FloatField(verbose_name="Колебания при покупке", default=0)
     sell = models.FloatField(verbose_name="Продажа")
     sell_delta = models.FloatField(verbose_name="Колебания при продаже", default=0)
+    emodji = models.CharField(max_length=2048, verbose_name="Smile", blank=True)
 
     class Meta():
         verbose_name = "Курс"
