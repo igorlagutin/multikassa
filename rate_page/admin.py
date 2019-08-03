@@ -9,6 +9,7 @@ class RateAdmin(admin.ModelAdmin):
     list_display = ('name','pursage','pursage_delta','sell','sell_delta' )
     list_editable = ('pursage', 'pursage_delta' ,'sell', 'sell_delta')
     ordering = ['id']
+    change_list_template = 'admin/rate_page/rate/change_list.html'
 
 class CryptoRateAdmin(admin.ModelAdmin):
     list_display = ('name','sell', 'code')

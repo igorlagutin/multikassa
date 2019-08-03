@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Rate, CryptoRate, AboutUsSection, ProcessSection, Contacts
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.management import call_command
+from django.contrib.admin.views.decorators import staff_member_required
 
 def index(request):
 
@@ -26,3 +28,9 @@ def index(request):
         }
 
     return render(request, 'rate_page/index.html', context)
+
+
+@staff_member_required
+def send_telegram_updates(request):
+    call_command('send_telegram_updates')
+    return redirect('/admin/')
